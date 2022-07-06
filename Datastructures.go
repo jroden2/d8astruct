@@ -13,30 +13,46 @@ func (s *Stack) IsEmpty() bool {
 	return len(*s) == 0
 }
 
+// EmptyStack removes all items from the stack
+func (s *Stack) EmptyStack() {
+	*s = make([]Item, 0)
+}
+
 // Push adds a new item to the Stack
 func (s *Stack) Push(newItem Item) {
 	*s = append(*s, newItem)
 }
 
 // Peek returns the last item from the Stack but does not remove it
-func (s *Stack) Peek() (Item, bool) {
+func (s *Stack) Peek() Item {
 	if s.IsEmpty() {
-		return nil, false
+		return nil
 	} else {
 		i := (len(*s) - 1)
 		item := (*s)[i]
-		return item, true
+		return item
 	}
 }
 
 // Pop returns the last item from the Stack and removes it
-func (s *Stack) Pop() (Item, bool) {
+func (s *Stack) Pop() Item {
 	if s.IsEmpty() {
-		return nil, false
+		return nil
 	} else {
 		i := (len(*s) - 1)
 		item := (*s)[i]
 		*s = (*s)[:i]
-		return item, true
+		return item
+	}
+}
+
+// First returns the first item from the Stack, removing it from the Stack
+func (s *Stack) First() Item {
+	if s.IsEmpty() {
+		return nil
+	} else {
+		item := (*s)[0]
+		*s = (*s)[1:]
+		return item
 	}
 }
