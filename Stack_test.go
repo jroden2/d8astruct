@@ -1,10 +1,9 @@
-package main
+package d8astruct
 
 import (
 	"fmt"
-	"testing"
-
 	"github.com/stretchr/testify/assert"
+	"testing"
 )
 
 func TestStack_EmptyStack(t *testing.T) {

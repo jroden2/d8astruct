@@ -1,4 +1,4 @@
-package main
+package d8astruct
 
 type Item any
 type Stack []Item
