@@ -11,7 +11,7 @@ func TestTrie_Insert(t *testing.T) {
 			root: &node{},
 		}
 
-		words := []string{"hello", "github", "are", "you", "enjoying", "this", "repo"}
+		words := []string{"hello", "github", "are", "you", "enjoying", "this", "Repo"}
 		for _, word := range words {
 			trie.Insert(word)
 		}
@@ -46,7 +46,7 @@ func TestTrie_Insert(t *testing.T) {
 			trie.Insert(word)
 		}
 
-		found := trie.Find("rep")
+		found := trie.Find("Rep")
 		if found {
 			assert.True(t, false, "String not found")
 		}
