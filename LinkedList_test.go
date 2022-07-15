@@ -29,6 +29,17 @@ func TestLinkedList_AddFirst(t *testing.T) {
 	assert.Equal(t, 412, ll.GetFirst())
 }
 
+func TestLinkedList_Add(t *testing.T) {
+	ll := LinkedList{}
+	//n1 := &llNode{data: "Hello, World"}
+	//n2 := &llNode{data: 412}
+
+	ll.Add(412)
+	ll.Add("Hello, World")
+
+	assert.Equal(t, "Hello, World", ll.GetLast())
+}
+
 func TestLinkedList_GetFirst(t *testing.T) {
 
 	t.Run("Assert GetFirst returns nil with empty list", func(t *testing.T) {

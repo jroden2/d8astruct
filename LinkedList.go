@@ -62,3 +62,21 @@ func (l *LinkedList) AddFirst(newNode *llNode) {
 	l.first.next = tNode
 	l.length++
 }
+
+func (l *LinkedList) Add(T any) {
+	newNode := &llNode{data: T}
+
+	if l.first == nil {
+		l.first = newNode
+		l.last = newNode
+		l.length++
+		return
+	}
+
+	for l.first.next != nil {
+		l.first = l.first.next
+	}
+	l.first.next = newNode
+	l.last = newNode
+	l.length++
+}
