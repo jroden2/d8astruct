@@ -30,7 +30,15 @@ func (l *LinkedList) GetLast() any {
 	if l.first == nil {
 		return nil
 	}
-	return l.last.data
+	if l.last.next == nil {
+		return l.last.data
+	} else {
+		tList := l
+		for tList.first.next != nil {
+			tList.first = tList.first.next
+		}
+		return tList.first.data
+	}
 }
 
 // Print outputs the data for each item in the linked list, removing each from the list iteration

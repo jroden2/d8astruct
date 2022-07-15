@@ -61,9 +61,12 @@ func TestLinkedList_GetLast(t *testing.T) {
 		ll := LinkedList{}
 		n1 := &llNode{data: "Hello, World"}
 		n2 := &llNode{data: 412}
+		n3 := &llNode{data: 121}
 
 		ll.AddFirst(n1)
 		ll.AddFirst(n2)
+		ll.AddFirst(n3)
+
 		assert.Equal(t, "Hello, World", ll.GetLast())
 	})
 }
