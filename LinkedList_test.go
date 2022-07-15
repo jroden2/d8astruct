@@ -10,8 +10,8 @@ func TestLinkedList_Print(t *testing.T) {
 	n1 := &llNode{data: "Hello, World"}
 	n2 := &llNode{data: 412}
 
-	ll.AddFirst(n1)
-	ll.AddFirst(n2)
+	ll.First(n1)
+	ll.First(n2)
 	fLength := ll.Length()
 	ll.Print()
 	nLength := ll.Length()
@@ -24,19 +24,15 @@ func TestLinkedList_AddFirst(t *testing.T) {
 	n1 := &llNode{data: "Hello, World"}
 	n2 := &llNode{data: 412}
 
-	ll.AddFirst(n1)
-	ll.AddFirst(n2)
+	ll.First(n1)
+	ll.First(n2)
 	assert.Equal(t, 412, ll.GetFirst())
 }
 
 func TestLinkedList_Add(t *testing.T) {
 	ll := LinkedList{}
-	//n1 := &llNode{data: "Hello, World"}
-	//n2 := &llNode{data: 412}
-
 	ll.Add(412)
 	ll.Add("Hello, World")
-
 	assert.Equal(t, "Hello, World", ll.GetLast())
 }
 
@@ -54,8 +50,8 @@ func TestLinkedList_GetFirst(t *testing.T) {
 		n1 := &llNode{data: "Hello, World"}
 		n2 := &llNode{data: 412}
 
-		ll.AddFirst(n1)
-		ll.AddFirst(n2)
+		ll.First(n1)
+		ll.First(n2)
 		assert.Equal(t, 412, ll.GetFirst())
 	})
 }
@@ -74,9 +70,9 @@ func TestLinkedList_GetLast(t *testing.T) {
 		n2 := &llNode{data: 412}
 		n3 := &llNode{data: 121}
 
-		ll.AddFirst(n1)
-		ll.AddFirst(n2)
-		ll.AddFirst(n3)
+		ll.First(n1)
+		ll.First(n2)
+		ll.First(n3)
 
 		assert.Equal(t, "Hello, World", ll.GetLast())
 	})

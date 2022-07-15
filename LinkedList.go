@@ -50,7 +50,7 @@ func (l *LinkedList) Print() {
 	}
 }
 
-func (l *LinkedList) AddFirst(newNode *llNode) {
+func (l *LinkedList) First(newNode *llNode) {
 	if l.first == nil {
 		l.first = newNode
 		l.last = newNode
