@@ -8,7 +8,7 @@ import (
 func TestTrie_Insert(t *testing.T) {
 	t.Run("Test that a value is added to the trie", func(t *testing.T) {
 		trie := &Trie{
-			root: &node{},
+			root: &trieNode{},
 		}
 
 		words := []string{"hello", "github", "are", "you", "enjoying", "this", "Repo"}
@@ -23,7 +23,7 @@ func TestTrie_Insert(t *testing.T) {
 	})
 	t.Run("Test that cannot find string missing", func(t *testing.T) {
 		trie := &Trie{
-			root: &node{},
+			root: &trieNode{},
 		}
 
 		words := []string{"hello", "github", "are", "you", "enjoying", "this", "repo"}
@@ -38,7 +38,7 @@ func TestTrie_Insert(t *testing.T) {
 	})
 	t.Run("Test that cannot find a partial string", func(t *testing.T) {
 		trie := &Trie{
-			root: &node{},
+			root: &trieNode{},
 		}
 
 		words := []string{"hello", "github", "are", "you", "enjoying", "this", "repo"}

@@ -2,14 +2,14 @@ package d8astruct
 
 import "strings"
 
-type node struct {
-	children  [TRIE_NODE_COUNT]*node
+type trieNode struct {
+	children  [TRIE_NODE_COUNT]*trieNode
 	endOfWord bool
 }
 
 // Trie is a data structure of particular use for searching words from node tip to tail
 type Trie struct {
-	root *node
+	root *trieNode
 }
 
 // Insert adds a string to the trie, but lowercases to standardize input
@@ -25,7 +25,7 @@ func (t *Trie) insert(input string) {
 		index := input[i] - 'a'
 
 		if cur.children[index] == nil {
-			cur.children[index] = &node{}
+			cur.children[index] = &trieNode{}
 		}
 
 		cur = cur.children[index]
