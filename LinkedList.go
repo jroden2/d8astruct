@@ -15,10 +15,12 @@ type LinkedList struct {
 	last   *llNode
 }
 
+// Length returns the length as an int
 func (l *LinkedList) Length() int {
 	return l.length
 }
 
+// GetFirst returns the first items data from the list
 func (l *LinkedList) GetFirst() any {
 	if l.first == nil {
 		return nil
@@ -26,6 +28,7 @@ func (l *LinkedList) GetFirst() any {
 	return l.first.data
 }
 
+// GetLast returns the last items data from the list
 func (l *LinkedList) GetLast() any {
 	if l.first == nil {
 		return nil
@@ -50,7 +53,10 @@ func (l *LinkedList) Print() {
 	}
 }
 
-func (l *LinkedList) First(newNode *llNode) {
+// First adds an item to the front of the linked list
+func (l *LinkedList) First(T any) {
+	newNode := &llNode{data: T}
+
 	if l.first == nil {
 		l.first = newNode
 		l.last = newNode
@@ -63,6 +69,7 @@ func (l *LinkedList) First(newNode *llNode) {
 	l.length++
 }
 
+// Add adds an item to the end of the linked list
 func (l *LinkedList) Add(T any) {
 	newNode := &llNode{data: T}
 
